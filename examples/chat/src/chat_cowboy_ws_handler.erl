@@ -42,7 +42,6 @@ websocket_terminate(_Reason, _Req, State) ->
 
 get_name(Req) ->
   {{Host, Port}, _} = cowboy_req:peer(Req),
-  Name = list_to_binary(string:join([inet_parse:ntoa(Host), 
+  Name = list_to_binary(string:join([inet_parse:ntoa(Host),
     ":", io_lib:format("~p", [Port])], "")),
   Name.
-  
